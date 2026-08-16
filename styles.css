@@ -358,31 +358,31 @@ input {
 
 .steam {
   position: absolute;
-  right: clamp(120px, 22vw, 360px);
-  bottom: clamp(330px, 52vh, 560px);
+  right: clamp(180px, 30vw, 470px);
+  bottom: clamp(360px, 50vh, 520px);
   display: flex;
-  gap: 22px;
-  opacity: 0.95;
+  gap: 16px;
+  opacity: 0.62;
   pointer-events: none;
 }
 
 .steam span {
-  width: 18px;
-  height: 118px;
+  width: 12px;
+  height: 92px;
   border-radius: 999px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 245, 219, 0.9), rgba(255, 255, 255, 0));
-  filter: blur(9px);
+  filter: blur(7px);
   transform-origin: bottom;
   animation: hero-steam-rise 3.4s ease-in-out infinite;
 }
 
 .steam span:nth-child(2) {
-  height: 148px;
+  height: 116px;
   animation-delay: 650ms;
 }
 
 .steam span:nth-child(3) {
-  height: 104px;
+  height: 82px;
   animation-delay: 1.2s;
 }
 
@@ -494,8 +494,9 @@ h3 {
 .intro {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
-  gap: 48px;
-  align-items: end;
+  column-gap: 48px;
+  row-gap: 18px;
+  align-items: center;
 }
 
 .intro p:last-child,
@@ -506,15 +507,17 @@ h3 {
 }
 
 .intro .memory-line {
-  grid-column: 1 / -1;
-  width: min(760px, 100%);
-  margin: 6px auto 0;
-  border-left: 4px solid var(--spice);
+  grid-column: 2;
+  width: 100%;
+  margin: 4px 0 0;
+  border-left: 3px solid var(--spice);
+  border-radius: 0 8px 8px 0;
+  background: #fff4e2;
   color: var(--ink);
-  font-size: clamp(1.35rem, 3vw, 2rem);
+  font-size: 1.02rem;
   font-weight: 800;
-  line-height: 1.14;
-  padding: 18px 0 18px 22px;
+  line-height: 1.35;
+  padding: 14px 16px;
 }
 
 .section-heading {
@@ -882,6 +885,10 @@ fieldset label:has(input:checked) {
     grid-template-columns: 1fr;
   }
 
+  .intro .memory-line {
+    grid-column: auto;
+  }
+
   .menu-grid {
     grid-template-columns: 1fr;
   }
@@ -907,9 +914,9 @@ fieldset label:has(input:checked) {
   }
 
   .steam {
-    right: 82px;
-    bottom: 56vh;
-    transform: scale(0.68);
+    right: 104px;
+    bottom: 58vh;
+    transform: scale(0.56);
   }
 }
 
