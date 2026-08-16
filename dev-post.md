@@ -3,6 +3,7 @@ title: Rasam House - Comfort Food Landing Page
 published: false
 description: A food-memory inspired landing page for South Indian rasam rice, built with responsive HTML, CSS, and JavaScript.
 tags: devchallenge, frontendchallenge, css, javascript
+cover_image: https://rohithmatham12.github.io/dev-comfort-food-challenge/assets/screenshot-desktop.png
 ---
 
 ## What I Built

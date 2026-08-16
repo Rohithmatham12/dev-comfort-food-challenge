@@ -22,7 +22,9 @@ Then visit `http://localhost:8080`.
 - Real food hero image generated for the project
 - Accessible skip link, semantic sections, labels, and focus states
 - Mobile navigation
-- Interactive order summary
+- Mood-based bowl builder
+- Dynamic comfort receipt with ETA, total, comfort meter, and pickup code
+- Conditional cooking loader and subtle steam motion
 - Reduced-motion support
 
 ## Files
