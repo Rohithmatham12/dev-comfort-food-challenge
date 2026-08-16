@@ -119,22 +119,22 @@ function makePlan(score, level) {
   const plans = [];
 
   if (level === "safe") {
-    plans.push(`Walk plan: ${state.duration} minutes is reasonable if ${name} is relaxed.`);
-    plans.push("Bring water anyway. Dog Days weather changes quickly.");
-    plans.push("Choose a route with shade breaks, even if the score is green.");
+    plans.push(`${state.duration} min ok`);
+    plans.push("Bring water");
+    plans.push("Use shade breaks");
   } else if (level === "moderate") {
-    plans.push(`Shorten the route for ${name}: aim for 10 to 15 minutes and sniff breaks.`);
-    plans.push("Carry water and pause before panting turns heavy.");
-    plans.push("Use grass, dirt, or shade instead of long pavement stretches.");
+    plans.push("10-15 min max");
+    plans.push("Water break");
+    plans.push("Grass over pavement");
   } else {
-    plans.push(`Skip the long walk for ${name}. Choose a potty break plus indoor enrichment.`);
-    plans.push("Try a towel treat roll, frozen lick mat, scent boxes, or gentle training reps.");
-    plans.push("If you must go out, wait until pavement cools and keep it under 10 minutes.");
+    plans.push("Potty loop only");
+    plans.push("Indoor puzzle");
+    plans.push("Wait for cool ground");
   }
 
-  if (state.shortNose) plans.push("Short-nosed dogs can overheat faster, so lower the walk intensity.");
-  if (state.senior) plans.push("Senior, puppy, or recovering dogs need extra recovery time.");
-  if (state.pavement === "hot") plans.push("Paw rule: if your palm cannot stay on the ground, paws should not either.");
+  if (state.shortNose) plans.push("Extra heat caution");
+  if (state.senior) plans.push("More recovery");
+  if (state.pavement === "hot") plans.push("No bare paws");
 
   return plans;
 }

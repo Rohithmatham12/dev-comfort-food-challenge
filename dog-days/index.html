@@ -47,10 +47,7 @@
             <span>leash, check</span>
             <span>the pace.</span>
           </h1>
-          <p>
-            Live weather, paw risk, safer timing, and a dog report card in one
-            quick check.
-          </p>
+          <p>Weather-aware walks. Dog-approved timing.</p>
           <div class="hero-actions">
             <a class="button primary" href="#planner">Start check</a>
             <a class="button ghost" href="#report">See report card</a>
@@ -82,12 +79,9 @@
       </section>
 
       <section id="planner" class="planner-section" aria-labelledby="planner-title">
-        <div class="section-heading">
+        <div class="section-heading compact-heading">
           <p class="eyebrow">Walk Planner</p>
-          <h2 id="planner-title">Tell PawPace the day, the dog, and the plan.</h2>
-          <p>
-            One form. One score. A safer yes/no before the leash comes out.
-          </p>
+          <h2 id="planner-title">Plan the walk.</h2>
         </div>
 
         <div class="planner-grid">
@@ -97,13 +91,13 @@
             </p>
 
             <label>
-              Dog name
+              Dog
               <input id="dog-name" name="dog-name" value="Milo" autocomplete="off" />
             </label>
 
             <div class="field-row">
               <label>
-                Location for real weather
+                Location
                 <span class="value-label">Open-Meteo, no key</span>
                 <input
                   id="location"
@@ -123,7 +117,7 @@
 
             <div class="field-row">
               <label>
-                Air temperature
+                Temp
                 <span class="value-label"><span data-temp-label>88</span>°F</span>
                 <input id="temperature" type="range" min="45" max="110" value="88" />
               </label>
@@ -136,7 +130,7 @@
 
             <div class="field-row">
               <label>
-                Pavement feel
+                Pavement
                 <select id="pavement">
                   <option value="cool">Cool / shaded</option>
                   <option value="warm" selected>Warm</option>
@@ -144,7 +138,7 @@
                 </select>
               </label>
               <label>
-                Walk length
+                Length
                 <select id="duration">
                   <option value="10">10 minutes</option>
                   <option value="20" selected>20 minutes</option>
@@ -155,10 +149,10 @@
             </div>
 
             <fieldset>
-              <legend>Dog profile</legend>
+              <legend>Size</legend>
               <label>
                 <input type="radio" name="dog-size" value="small" />
-                Small / toy
+                Small
               </label>
               <label>
                 <input type="radio" name="dog-size" value="medium" checked />
@@ -166,30 +160,30 @@
               </label>
               <label>
                 <input type="radio" name="dog-size" value="large" />
-                Large / giant
+                Large
               </label>
             </fieldset>
 
             <fieldset>
-              <legend>Extra sensitivity</legend>
+              <legend>Sensitivity</legend>
               <label>
                 <input id="short-nose" type="checkbox" />
-                Short-nosed breed
+                Short nose
               </label>
               <label>
                 <input id="senior" type="checkbox" />
-                Senior, puppy, or recovering
+                Senior/puppy
               </label>
               <label>
                 <input id="dark-coat" type="checkbox" />
-                Thick or dark coat
+                Dark coat
               </label>
             </fieldset>
           </form>
 
           <aside class="result-card" aria-live="polite" aria-labelledby="result-title">
             <div class="result-topline">
-              <p class="eyebrow">Current Plan</p>
+              <p class="eyebrow">Plan</p>
               <span class="risk-pill" data-risk-pill>Moderate</span>
             </div>
             <h3 id="result-title" data-result-title>Milo needs a slower, shaded walk.</h3>
@@ -230,13 +224,9 @@
       </section>
 
       <section id="ai" class="ai-section" aria-labelledby="ai-title">
-        <div>
+        <div class="section-heading compact-heading">
           <p class="eyebrow">Optional Prize Tech</p>
           <h2 id="ai-title">Google AI mode.</h2>
-          <p>
-            Optional Gemini help for backup games and dog-written report cards.
-            PawPace still works without a key.
-          </p>
         </div>
         <div class="ai-card">
           <label>
@@ -251,20 +241,14 @@
           <button class="button primary" type="button" data-ai-button>
             Generate with Google AI
           </button>
-          <div class="ai-output" data-ai-output aria-live="polite">
-            No key? The regular planner still gives a complete rule-based plan.
-          </div>
+          <div class="ai-output" data-ai-output aria-live="polite">Ready for enrichment ideas.</div>
         </div>
       </section>
 
       <section id="report" class="report-section" aria-labelledby="report-title">
-        <div class="section-heading">
+        <div class="section-heading compact-heading">
           <p class="eyebrow">Shareable Moment</p>
           <h2 id="report-title">A walk report card, from the dog.</h2>
-          <p>
-            Most dog apps are cute. PawPace tries to prevent actual vet visits,
-            then gives you something worth sharing.
-          </p>
         </div>
 
         <div class="report-grid">
@@ -301,37 +285,8 @@
             <button class="button ghost" type="button" data-download-report>
               Download report image
             </button>
-            <p class="ai-note" data-report-status aria-live="polite">
-              Add a Google AI key above for a custom first-person dog note.
-            </p>
+            <p class="ai-note" data-report-status aria-live="polite">Ready.</p>
           </div>
-        </div>
-      </section>
-
-      <section id="how" class="how-section compact-section" aria-labelledby="how-title">
-        <p class="eyebrow">How It Works</p>
-        <h2 id="how-title">Small signals. Clear call.</h2>
-        <div class="how-grid">
-          <article>
-            <span>01</span>
-            <h3>Heat load</h3>
-            <p>Weather and dog sensitivity shape the score.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Paw risk</h3>
-            <p>Pavement pushes the plan toward shade or shorter loops.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Backup joy</h3>
-            <p>Risky day? Swap the walk for indoor enrichment.</p>
-          </article>
-          <article>
-            <span>04</span>
-            <h3>Real numbers</h3>
-            <p>Open-Meteo grounds the check in local conditions.</p>
-          </article>
         </div>
       </section>
     </main>
