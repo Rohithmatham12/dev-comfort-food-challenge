@@ -512,24 +512,20 @@ h1 span {
   background: linear-gradient(180deg, #e5a43a, #743d20);
 }
 
-.caption {
-  position: absolute;
-  left: 50%;
-  bottom: 1.5rem;
-  width: max-content;
-  max-width: calc(100% - 2rem);
-  margin: 0;
+.art-caption {
+  width: fit-content;
+  max-width: 100%;
+  margin: 1rem auto 0;
   padding: 0.55rem 1rem;
-  color: #fff9e8;
+  color: var(--ink);
   font-size: clamp(0.8rem, 1.7vw, 1rem);
   font-weight: 900;
   letter-spacing: 0.16em;
+  text-align: center;
   text-transform: uppercase;
-  background: rgba(33, 23, 15, 0.66);
-  border: 1px solid rgba(255, 244, 217, 0.22);
+  background: rgba(255, 246, 232, 0.72);
+  border: 1px solid rgba(87, 45, 20, 0.18);
   border-radius: 999px;
-  transform: translateX(-50%);
-  backdrop-filter: blur(8px);
 }
 
 .notes {
@@ -694,10 +690,9 @@ h1 span {
     width: 128px;
   }
 
-  .caption {
+  .art-caption {
     width: auto;
     max-width: calc(100% - 1rem);
-    text-align: center;
     white-space: normal;
   }
 }
