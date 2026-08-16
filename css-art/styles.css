@@ -293,6 +293,27 @@ h1 span {
 .d4 { left: 37%; top: 8%; animation-delay: -3.4s; transform: scale(0.72); }
 .d5 { left: 72%; top: 28%; animation-delay: -0.9s; transform: scale(0.82); }
 
+.sill-puddle {
+  position: absolute;
+  bottom: 1.8%;
+  height: 0.28rem;
+  border-radius: 50%;
+  background: rgba(204, 232, 240, 0.28);
+  filter: blur(1px);
+  animation: puddle-glint 4.8s ease-in-out infinite;
+}
+
+.sp1 {
+  left: 28%;
+  width: 10%;
+}
+
+.sp2 {
+  right: 14%;
+  width: 16%;
+  animation-delay: -2.4s;
+}
+
 .table {
   position: absolute;
   inset: auto 0 0;
@@ -342,6 +363,18 @@ h1 span {
   width: min(38vw, 430px);
   aspect-ratio: 1.25;
   transform: translateX(-50%);
+}
+
+.bowl-reflection {
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  bottom: -7%;
+  height: 18%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(255, 222, 151, 0.3), transparent 70%);
+  filter: blur(6px);
+  transform: scaleX(1.25);
 }
 
 .bowl {
@@ -502,6 +535,35 @@ h1 span {
 .s3 { left: 58%; height: 7rem; animation-delay: -2.2s; }
 .s4 { left: 70%; height: 6.3rem; animation-delay: -3s; transform: scaleX(-1); }
 
+.mustard-pop {
+  position: absolute;
+  z-index: 4;
+  width: 0.42rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #24160e;
+  box-shadow: 0 0 0 0.18rem rgba(255, 197, 54, 0.2);
+  opacity: 0;
+  animation: mustard-pop 2.8s ease-in-out infinite;
+}
+
+.mp1 {
+  left: 42%;
+  bottom: 65%;
+}
+
+.mp2 {
+  left: 57%;
+  bottom: 68%;
+  animation-delay: -0.9s;
+}
+
+.mp3 {
+  left: 51%;
+  bottom: 74%;
+  animation-delay: -1.8s;
+}
+
 .papad {
   position: absolute;
   right: 17%;
@@ -605,6 +667,18 @@ h1 span {
   width: min(12vw, 120px);
   height: min(18vw, 170px);
   filter: drop-shadow(0 13px 15px rgba(32, 11, 4, 0.25));
+}
+
+.lamp-halo {
+  position: absolute;
+  left: -32%;
+  top: -15%;
+  width: 160%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 188, 57, 0.4), transparent 62%);
+  filter: blur(10px);
+  animation: lamp-glow 2.4s ease-in-out infinite;
 }
 
 .flame {
@@ -758,6 +832,47 @@ h1 span {
   50% {
     opacity: 0.46;
     transform: scaleX(1.05);
+  }
+}
+
+@keyframes puddle-glint {
+  0%,
+  100% {
+    opacity: 0.28;
+    transform: scaleX(0.88);
+  }
+  50% {
+    opacity: 0.58;
+    transform: scaleX(1.1);
+  }
+}
+
+@keyframes mustard-pop {
+  0%,
+  18% {
+    opacity: 0;
+    transform: translateY(0) scale(0.45);
+  }
+  38% {
+    opacity: 0.9;
+    transform: translateY(-1.1rem) scale(1);
+  }
+  70%,
+  100% {
+    opacity: 0;
+    transform: translateY(-2.2rem) scale(0.5);
+  }
+}
+
+@keyframes lamp-glow {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.82;
+    transform: scale(1.04);
   }
 }
 
