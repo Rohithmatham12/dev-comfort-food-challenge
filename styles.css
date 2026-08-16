@@ -35,6 +35,10 @@ img {
   max-width: 100%;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 a {
   color: inherit;
 }
@@ -471,6 +475,16 @@ h3 {
   background: rgba(255, 255, 255, 0.14);
 }
 
+.button.quiet {
+  border-color: rgba(255, 255, 255, 0.36);
+  background: transparent;
+  color: white;
+}
+
+.button.quiet:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
 .section {
   max-width: 1160px;
   margin: 0 auto;
@@ -650,6 +664,39 @@ fieldset label {
 
 .summary .button:hover {
   background: #ffd56f;
+}
+
+.summary .button.quiet {
+  margin-top: 10px;
+  border-color: rgba(255, 255, 255, 0.42);
+  background: transparent;
+  color: white;
+}
+
+.summary .button.quiet:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.pickup-meta {
+  margin: 18px 0 0;
+  font-weight: 800;
+}
+
+.order-progress {
+  height: 9px;
+  overflow: hidden;
+  margin-top: 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.order-progress span {
+  display: block;
+  width: 42%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--gold);
+  animation: loader-sweep 1s ease-in-out infinite;
 }
 
 .toast {
