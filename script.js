@@ -8,12 +8,20 @@ const summaryCopy = document.querySelector("[data-summary-copy]");
 const pickupMeta = document.querySelector("[data-pickup-meta]");
 const orderProgress = document.querySelector("[data-order-progress]");
 const reservationSteam = document.querySelector("[data-reservation-steam]");
+const comfortLabel = document.querySelector("[data-comfort-label]");
+const comfortMeter = document.querySelector("[data-comfort-meter]");
+const comfortNote = document.querySelector("[data-comfort-note]");
+const summaryEta = document.querySelector("[data-summary-eta]");
+const summaryTotal = document.querySelector("[data-summary-total]");
 const toastButton = document.querySelector("[data-toast-button]");
 const resetOrderButton = document.querySelector("[data-reset-order]");
+const copyReceiptButton = document.querySelector("[data-copy-receipt]");
 const toast = document.querySelector("[data-toast]");
 
 let reservationTimer;
 let loaderTimer;
+let currentPickupCode = "";
+let currentReceipt = "";
 
 const garnishCopy = {
   "Ghee and curry leaves": "ghee and curry leaves",
@@ -25,14 +33,26 @@ const moodCopy = {
   rainy: {
     label: "Rainy day",
     note: "built for slow windows and crisp papad",
+    comfort: "Slow warm",
+    detail: "Best with the window cracked open and papad on the side.",
+    eta: 12,
+    meter: 82,
   },
   long: {
     label: "Long workday",
     note: "built to soften the edges of the day",
+    comfort: "Deep reset",
+    detail: "Best eaten without rushing, preferably before opening another tab.",
+    eta: 10,
+    meter: 74,
   },
   homesick: {
     label: "Homesick",
     note: "built for the first spoonful that feels familiar",
+    comfort: "Full heart",
+    detail: "Best with extra rasam poured around the rice like a small moat.",
+    eta: 14,
+    meter: 92,
   },
 };
 
@@ -42,7 +62,10 @@ function updateHeader() {
 
 function updateOrderSummary() {
   const data = new FormData(orderForm);
-  const bowl = data.get("bowl");
+  const bowlSelect = orderForm.elements.bowl;
+  const selectedBowl = bowlSelect.options[bowlSelect.selectedIndex];
+  const bowl = selectedBowl.value;
+  const price = Number(selectedBowl.dataset.price);
   const spice = data.get("spice");
   const mood = data.get("mood");
   const garnish = data.get("garnish");
@@ -50,12 +73,14 @@ function updateOrderSummary() {
 
   summaryBowl.textContent = bowl;
   summaryCopy.textContent = `${comfort.label} bowl: ${spice} spice with ${garnishCopy[garnish]}, ${comfort.note}.`;
-  pickupMeta.textContent = "Pickup window: 12 minutes";
+  comfortLabel.textContent = comfort.comfort;
+  comfortMeter.style.width = `${comfort.meter}%`;
+  comfortNote.textContent = comfort.detail;
+  summaryEta.textContent = `${comfort.eta} minutes`;
+  summaryTotal.textContent = `$${price}`;
+  pickupMeta.textContent = `Pickup window: ${comfort.eta} minutes`;
+  currentReceipt = `${bowl} - ${comfort.label}, ${spice} spice, ${garnishCopy[garnish]}. Ready in ${comfort.eta} minutes. Total: $${price}.`;
   resetReservationState();
-}
-
-function capitalize(value) {
-  return `${value.charAt(0).toUpperCase()}${value.slice(1)}`;
 }
 
 function resetReservationState() {
@@ -64,13 +89,16 @@ function resetReservationState() {
   reservationSteam.hidden = true;
   toast.hidden = true;
   resetOrderButton.hidden = true;
+  copyReceiptButton.hidden = true;
   toastButton.hidden = false;
   toastButton.disabled = false;
   toastButton.textContent = "Reserve pickup";
+  currentPickupCode = "";
 }
 
 function reservePickup() {
   const pickupCode = Math.floor(100 + Math.random() * 900);
+  currentPickupCode = `RH-${pickupCode}`;
 
   toast.hidden = true;
   orderProgress.hidden = false;
@@ -83,10 +111,30 @@ function reservePickup() {
     reservationSteam.hidden = false;
     toastButton.hidden = true;
     resetOrderButton.hidden = false;
-    pickupMeta.textContent = `Pickup code: RH-${pickupCode}`;
-    toast.textContent = `Your rasam is resting under a lid. Pickup code RH-${pickupCode}.`;
+    copyReceiptButton.hidden = false;
+    pickupMeta.textContent = `Pickup code: ${currentPickupCode}`;
+    toast.textContent = `Your rasam is resting under a lid. Pickup code ${currentPickupCode}.`;
     toast.hidden = false;
   }, 1100);
+}
+
+async function copyPickupNote() {
+  const note = `${currentReceipt} Pickup code: ${currentPickupCode}.`;
+
+  try {
+    if (!navigator.clipboard) {
+      throw new Error("Clipboard unavailable");
+    }
+
+    await navigator.clipboard.writeText(note);
+    copyReceiptButton.textContent = "Pickup note copied";
+  } catch {
+    copyReceiptButton.textContent = "Pickup note ready";
+  }
+
+  window.setTimeout(() => {
+    copyReceiptButton.textContent = "Copy pickup note";
+  }, 1400);
 }
 
 function showLoaderIfStillLoading() {
@@ -144,3 +192,4 @@ resetOrderButton.addEventListener("click", () => {
   resetReservationState();
   orderForm.querySelector("select, input").focus();
 });
+copyReceiptButton.addEventListener("click", copyPickupNote);

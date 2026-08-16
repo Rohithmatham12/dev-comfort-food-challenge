@@ -215,9 +215,9 @@
             <label>
               Bowl
               <select name="bowl">
-                <option>Rainy Day Rasam Rice</option>
-                <option>Lemon Pepper Bowl</option>
-                <option>Grandma's Tamarind Cup</option>
+                <option data-price="12">Rainy Day Rasam Rice</option>
+                <option data-price="13">Lemon Pepper Bowl</option>
+                <option data-price="14">Grandma's Tamarind Cup</option>
               </select>
             </label>
             <fieldset>
@@ -248,6 +248,28 @@
           <p data-summary-copy>
             Gentle spice with ghee and curry leaves. Ready in 12 minutes.
           </p>
+          <div class="comfort-meter" aria-label="Comfort meter">
+            <div>
+              <span>Comfort meter</span>
+              <strong data-comfort-label>Slow warm</strong>
+            </div>
+            <div class="meter-track" aria-hidden="true">
+              <span data-comfort-meter></span>
+            </div>
+          </div>
+          <p class="comfort-note" data-comfort-note>
+            Best with the window cracked open and papad on the side.
+          </p>
+          <dl class="receipt-lines">
+            <div>
+              <dt>Ready in</dt>
+              <dd data-summary-eta>12 minutes</dd>
+            </div>
+            <div>
+              <dt>Total</dt>
+              <dd data-summary-total>$12</dd>
+            </div>
+          </dl>
           <p class="pickup-meta" data-pickup-meta>Pickup window: 12 minutes</p>
           <div class="reservation-steam" data-reservation-steam hidden aria-hidden="true">
             <span></span>
@@ -261,6 +283,9 @@
           </button>
           <button class="button quiet" type="button" data-reset-order hidden>
             Change order
+          </button>
+          <button class="button quiet" type="button" data-copy-receipt hidden>
+            Copy pickup note
           </button>
           <p class="toast" role="status" data-toast hidden>
             Pickup reserved. Your bowl will stay warm.

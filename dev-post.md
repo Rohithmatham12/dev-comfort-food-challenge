@@ -26,6 +26,11 @@ around that mood. The reservation flow also has a small cooking moment before it
 returns a pickup code, so the interface feels like something is being prepared
 rather than instantly stamped out.
 
+For the final polish, I made the order summary behave more like a tiny comfort
+receipt: the bowl price, pickup time, comfort meter, and note all update from
+the selected mood and bowl. After reserving, the card gives a pickup code, a
+small steam animation, and a copyable pickup note.
+
 The page includes:
 
 - a full-viewport food hero with soft steam animation
@@ -34,7 +39,8 @@ The page includes:
 - menu cards
 - a short cooking ritual section
 - an interactive "build your bowl" order panel with mood-based copy
-- a pickup reservation state with progress, a confirmation code, and reset
+- a comfort receipt with dynamic ETA, price, meter, and note
+- a pickup reservation state with progress, confirmation code, copy note, and reset
 - Open Graph and Twitter preview metadata
 - responsive mobile layout
 - reduced-motion support
@@ -52,7 +58,8 @@ The main design challenge was making the food memory feel present immediately
 without turning the page into a generic restaurant template. I kept the layout
 simple and let the dish lead the first screen. The interaction is intentionally
 small: users can choose a bowl, spice level, garnish, and mood, and the order
-summary updates without needing a backend.
+summary updates the copy, ETA, total, and comfort meter without needing a
+backend.
 
 I also added a gentle steam animation in the hero, a conditional "Simmering
 rasam" loader for slower loads, and a tiny confirmation moment after reserving
