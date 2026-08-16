@@ -293,27 +293,6 @@ h1 span {
 .d4 { left: 37%; top: 8%; animation-delay: -3.4s; transform: scale(0.72); }
 .d5 { left: 72%; top: 28%; animation-delay: -0.9s; transform: scale(0.82); }
 
-.sill-puddle {
-  position: absolute;
-  bottom: 1.8%;
-  height: 0.28rem;
-  border-radius: 50%;
-  background: rgba(204, 232, 240, 0.28);
-  filter: blur(1px);
-  animation: puddle-glint 4.8s ease-in-out infinite;
-}
-
-.sp1 {
-  left: 28%;
-  width: 10%;
-}
-
-.sp2 {
-  right: 14%;
-  width: 16%;
-  animation-delay: -2.4s;
-}
-
 .table {
   position: absolute;
   inset: auto 0 0;
@@ -363,18 +342,6 @@ h1 span {
   width: min(38vw, 430px);
   aspect-ratio: 1.25;
   transform: translateX(-50%);
-}
-
-.bowl-reflection {
-  position: absolute;
-  left: 18%;
-  right: 18%;
-  bottom: -7%;
-  height: 18%;
-  border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(255, 222, 151, 0.3), transparent 70%);
-  filter: blur(6px);
-  transform: scaleX(1.25);
 }
 
 .bowl {
@@ -465,6 +432,8 @@ h1 span {
 .p1 { left: 45%; top: 9%; }
 .p2 { left: 64%; top: 15%; }
 .p3 { left: 51%; top: 24%; }
+.p4 { left: 70%; top: 24%; transform: scale(0.78); }
+.p5 { left: 37%; top: 25%; transform: scale(0.7); }
 
 .leaf {
   width: 1.35rem;
@@ -477,6 +446,22 @@ h1 span {
 .l2 { left: 68%; top: 23%; transform: rotate(-18deg); }
 .l3 { left: 73%; top: 14%; transform: rotate(-38deg) scale(0.75); }
 
+.tempering {
+  position: absolute;
+  left: 31%;
+  top: 6%;
+  z-index: 2;
+  width: 42%;
+  height: 26%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 11% 45%, #111 0 0.16rem, transparent 0.18rem),
+    radial-gradient(circle at 24% 64%, #111 0 0.12rem, transparent 0.14rem),
+    radial-gradient(circle at 82% 36%, #111 0 0.14rem, transparent 0.16rem),
+    radial-gradient(circle at 91% 68%, #111 0 0.11rem, transparent 0.13rem),
+    radial-gradient(circle at 45% 28%, rgba(255, 219, 76, 0.76) 0 0.22rem, transparent 0.24rem);
+  filter: drop-shadow(0 0 3px rgba(255, 213, 79, 0.35));
+}
 
 .bowl-front {
   position: absolute;
@@ -517,7 +502,6 @@ h1 span {
 .s3 { left: 58%; height: 7rem; animation-delay: -2.2s; }
 .s4 { left: 70%; height: 6.3rem; animation-delay: -3s; transform: scaleX(-1); }
 
-
 .papad {
   position: absolute;
   right: 17%;
@@ -553,6 +537,43 @@ h1 span {
     linear-gradient(180deg, #bb2b19, #7b1b11);
 }
 
+.pepper-scatter {
+  position: absolute;
+  width: 0.52rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #21170f;
+  box-shadow: 0 2px 4px rgba(32, 12, 3, 0.26);
+}
+
+.ps1 { left: 36%; bottom: 16%; }
+.ps2 { left: 69%; bottom: 15%; transform: scale(0.82); }
+.ps3 { right: 30%; bottom: 32%; transform: scale(0.72); }
+
+.curry-sprig {
+  position: absolute;
+  left: 29%;
+  bottom: 28%;
+  width: min(9vw, 86px);
+  height: 1rem;
+  border-radius: 999px;
+  background: #245a2b;
+  transform: rotate(18deg);
+  box-shadow: 0 8px 12px rgba(32, 12, 3, 0.18);
+}
+
+.curry-sprig span {
+  position: absolute;
+  top: -0.42rem;
+  width: 1.2rem;
+  height: 0.58rem;
+  border-radius: 100% 0;
+  background: #4f8f39;
+}
+
+.curry-sprig span:nth-child(1) { left: 13%; transform: rotate(-35deg); }
+.curry-sprig span:nth-child(2) { left: 42%; transform: rotate(28deg); }
+.curry-sprig span:nth-child(3) { right: 6%; transform: rotate(-20deg); }
 
 .spoon {
   position: absolute;
@@ -584,18 +605,6 @@ h1 span {
   width: min(12vw, 120px);
   height: min(18vw, 170px);
   filter: drop-shadow(0 13px 15px rgba(32, 11, 4, 0.25));
-}
-
-.lamp-halo {
-  position: absolute;
-  left: -32%;
-  top: -15%;
-  width: 160%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 188, 57, 0.4), transparent 62%);
-  filter: blur(10px);
-  animation: lamp-glow 2.4s ease-in-out infinite;
 }
 
 .flame {
@@ -749,30 +758,6 @@ h1 span {
   50% {
     opacity: 0.46;
     transform: scaleX(1.05);
-  }
-}
-
-@keyframes puddle-glint {
-  0%,
-  100% {
-    opacity: 0.28;
-    transform: scaleX(0.88);
-  }
-  50% {
-    opacity: 0.58;
-    transform: scaleX(1.1);
-  }
-}
-
-@keyframes lamp-glow {
-  0%,
-  100% {
-    opacity: 0.55;
-    transform: scale(0.95);
-  }
-  50% {
-    opacity: 0.82;
-    transform: scale(1.04);
   }
 }
 
