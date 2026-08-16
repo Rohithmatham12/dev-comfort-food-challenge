@@ -482,7 +482,7 @@ document.querySelectorAll("input, select").forEach((input) => {
   input.addEventListener("input", render);
   input.addEventListener("change", render);
 });
-el.copyPlan.addEventListener("click", copyPlan);
+el.copyPlan?.addEventListener("click", copyPlan);
 el.aiButton.addEventListener("click", generateAiPlan);
 el.weatherButton.addEventListener("click", useLiveWeather);
 el.reportButton.addEventListener("click", generateDogReport);

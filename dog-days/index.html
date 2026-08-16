@@ -32,10 +32,9 @@
         <span>PawPace</span>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="#planner">Planner</a>
-        <a href="#how">How it works</a>
+        <a href="#planner">Plan</a>
         <a href="#ai">Google AI</a>
-        <a href="#report">Report Card</a>
+        <a href="#report">Report</a>
       </nav>
     </header>
 
@@ -49,13 +48,12 @@
             <span>the pace.</span>
           </h1>
           <p>
-            PawPace turns hot-weather guesses into a clear walk plan for dogs:
-            risk level, paw safety, hydration, cooler timing, and indoor backup
-            enrichment.
+            Live weather, paw risk, safer timing, and a dog report card in one
+            quick check.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#planner">Build a walk plan</a>
-            <a class="button ghost" href="#ai">Try Google AI mode</a>
+            <a class="button primary" href="#planner">Start check</a>
+            <a class="button ghost" href="#report">See report card</a>
           </div>
         </div>
 
@@ -88,8 +86,7 @@
           <p class="eyebrow">Walk Planner</p>
           <h2 id="planner-title">Tell PawPace the day, the dog, and the plan.</h2>
           <p>
-            The score updates instantly. It is not veterinary advice, but it
-            gives a careful starting point for everyday decisions.
+            One form. One score. A safer yes/no before the leash comes out.
           </p>
         </div>
 
@@ -107,7 +104,7 @@
             <div class="field-row">
               <label>
                 Location for real weather
-                <span class="value-label">Uses Open-Meteo, no key needed</span>
+                <span class="value-label">Open-Meteo, no key</span>
                 <input
                   id="location"
                   name="location"
@@ -116,7 +113,7 @@
                 />
               </label>
               <div class="weather-action">
-                <p>Weather lookup</p>
+                <p>Weather</p>
                 <span class="value-label" data-weather-status>Manual values shown</span>
                 <button class="button ghost" type="button" data-weather-button>
                   Use live weather
@@ -226,9 +223,7 @@
 
             <ul class="plan-list" data-plan-list></ul>
 
-            <button class="button primary full" type="button" data-copy-plan>
-              Copy walk plan
-            </button>
+            <a class="button primary full" href="#report">Make report card</a>
             <p class="copy-status" data-copy-status aria-live="polite"></p>
           </aside>
         </div>
@@ -237,11 +232,10 @@
       <section id="ai" class="ai-section" aria-labelledby="ai-title">
         <div>
           <p class="eyebrow">Optional Prize Tech</p>
-          <h2 id="ai-title">Google AI mode for a custom enrichment plan.</h2>
+          <h2 id="ai-title">Google AI mode.</h2>
           <p>
-            PawPace works without an API key. If you add a Google AI Studio API
-            key, it can ask Gemini for a tailored indoor enrichment plan based
-            on the current dog profile and weather risk.
+            Optional Gemini help for backup games and dog-written report cards.
+            PawPace still works without a key.
           </p>
         </div>
         <div class="ai-card">
@@ -257,10 +251,6 @@
           <button class="button primary" type="button" data-ai-button>
             Generate with Google AI
           </button>
-          <p class="ai-note">
-            The key stays in this browser session and is sent only to Google
-            Generative Language API when you press the button.
-          </p>
           <div class="ai-output" data-ai-output aria-live="polite">
             No key? The regular planner still gives a complete rule-based plan.
           </div>
@@ -273,7 +263,7 @@
           <h2 id="report-title">A walk report card, from the dog.</h2>
           <p>
             Most dog apps are cute. PawPace tries to prevent actual vet visits,
-            then turns the safer plan into a little note worth screenshotting.
+            then gives you something worth sharing.
           </p>
         </div>
 
@@ -318,29 +308,29 @@
         </div>
       </section>
 
-      <section id="how" class="how-section" aria-labelledby="how-title">
+      <section id="how" class="how-section compact-section" aria-labelledby="how-title">
         <p class="eyebrow">How It Works</p>
-        <h2 id="how-title">Small safety signals, one readable plan.</h2>
+        <h2 id="how-title">Small signals. Clear call.</h2>
         <div class="how-grid">
           <article>
             <span>01</span>
             <h3>Heat load</h3>
-            <p>Temperature, humidity, coat, age, and face shape raise or lower the caution score.</p>
+            <p>Weather and dog sensitivity shape the score.</p>
           </article>
           <article>
             <span>02</span>
             <h3>Paw risk</h3>
-            <p>Pavement and walk length adjust the plan toward shade, shorter loops, or indoor games.</p>
+            <p>Pavement pushes the plan toward shade or shorter loops.</p>
           </article>
           <article>
             <span>03</span>
             <h3>Backup joy</h3>
-            <p>If the walk is risky, PawPace suggests enrichment instead of simply saying no.</p>
+            <p>Risky day? Swap the walk for indoor enrichment.</p>
           </article>
           <article>
             <span>04</span>
             <h3>Real numbers</h3>
-            <p>Open-Meteo can ground the planner with local temperature, humidity, and UV.</p>
+            <p>Open-Meteo grounds the check in local conditions.</p>
           </article>
         </div>
       </section>
