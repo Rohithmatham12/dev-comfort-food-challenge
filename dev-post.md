@@ -23,11 +23,10 @@ The page includes:
 
 ## Demo
 
-<!-- Add your deployed link here. Examples:
-{% embed https://your-cloud-run-url %}
-or
-{% codepen https://codepen.io/your-pen %}
--->
+{% embed https://rohithmatham12.github.io/dev-comfort-food-challenge/ %}
+
+Source code:
+https://github.com/Rohithmatham12/dev-comfort-food-challenge
 
 ## Journey
 
