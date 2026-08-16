@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Rasam House is a comfort food landing page celebrating warm South Indian rasam rice bowls."
+    />
+    <title>Rasam House | Comfort Food Bowls</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="Rasam House home">
+          <span class="brand-mark" aria-hidden="true">RH</span>
+          <span>Rasam House</span>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-links"
+          data-nav-toggle
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links" id="nav-links" data-nav-links>
+          <a href="#menu">Menu</a>
+          <a href="#ritual">Ritual</a>
+          <a href="#order">Order</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <img
+          class="hero-image"
+          src="assets/rasam-rice-hero.png"
+          alt="A warm bowl of rasam rice with curry leaves, papad, lemon wedges, and a steel cup of rasam"
+        />
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Comfort Food Edition</p>
+          <h1 id="hero-title">Rice, rasam, and the quiet luxury of feeling home.</h1>
+          <p class="hero-copy">
+            Rasam House serves bright, peppery South Indian bowls built for rainy
+            evenings, long workdays, and anyone who needs food that knows how to
+            be gentle.
+          </p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button primary" href="#order">Build a bowl</a>
+            <a class="button secondary" href="#menu">See the menu</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro" aria-labelledby="intro-title">
+        <div>
+          <p class="eyebrow">Today's pot</p>
+          <h2 id="intro-title">A landing page for the meal you make when the day runs out of edges.</h2>
+        </div>
+        <p>
+          This concept is part tiny restaurant, part recipe memory. Every detail
+          is tuned for warmth: clear choices, readable contrast, keyboard-friendly
+          controls, and a first screen that puts the food where it belongs.
+        </p>
+      </section>
+
+      <section class="section menu" id="menu" aria-labelledby="menu-title">
+        <div class="section-heading">
+          <p class="eyebrow">Menu</p>
+          <h2 id="menu-title">Three bowls, one feeling.</h2>
+        </div>
+        <div class="menu-grid">
+          <article class="menu-card">
+            <div>
+              <p class="menu-label">Classic</p>
+              <h3>Rainy Day Rasam Rice</h3>
+              <p>
+                Tomato, tamarind, black pepper, cumin, curry leaves, steamed rice,
+                and a spoon of ghee.
+              </p>
+            </div>
+            <span class="price">$12</span>
+          </article>
+          <article class="menu-card">
+            <div>
+              <p class="menu-label">Bright</p>
+              <h3>Lemon Pepper Bowl</h3>
+              <p>
+                A sharper rasam with lemon, crushed pepper, roasted garlic, and
+                crisp papad.
+              </p>
+            </div>
+            <span class="price">$13</span>
+          </article>
+          <article class="menu-card">
+            <div>
+              <p class="menu-label">Slow</p>
+              <h3>Grandma's Tamarind Cup</h3>
+              <p>
+                Deep tamarind broth with coriander, mustard seed tempering, and
+                extra rice for soaking.
+              </p>
+            </div>
+            <span class="price">$14</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section ritual" id="ritual" aria-labelledby="ritual-title">
+        <div class="ritual-copy">
+          <p class="eyebrow">The ritual</p>
+          <h2 id="ritual-title">Comfort is a sequence.</h2>
+          <p>
+            Steam first. Then the crackle of mustard seeds. Then curry leaves.
+            Then rice soft enough to fold into the broth. Nothing here is fussy;
+            the care is in the timing.
+          </p>
+        </div>
+        <ol class="steps" aria-label="Rasam House bowl ritual">
+          <li>
+            <span>01</span>
+            <strong>Temper</strong>
+            <p>Mustard, cumin, dried chili, and curry leaves bloom in hot ghee.</p>
+          </li>
+          <li>
+            <span>02</span>
+            <strong>Simmer</strong>
+            <p>Tamarind, tomato, pepper, and dal water turn into a bright broth.</p>
+          </li>
+          <li>
+            <span>03</span>
+            <strong>Fold</strong>
+            <p>Rice meets rasam just before serving, with papad on the side.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section order" id="order" aria-labelledby="order-title">
+        <div class="order-panel">
+          <div>
+            <p class="eyebrow">Build your bowl</p>
+            <h2 id="order-title">Choose your comfort level.</h2>
+            <p>
+              Pick a spice level and garnish. The summary updates instantly, so
+              the page feels alive without needing a backend.
+            </p>
+          </div>
+          <form class="order-form" data-order-form>
+            <label>
+              Bowl
+              <select name="bowl">
+                <option>Rainy Day Rasam Rice</option>
+                <option>Lemon Pepper Bowl</option>
+                <option>Grandma's Tamarind Cup</option>
+              </select>
+            </label>
+            <fieldset>
+              <legend>Spice level</legend>
+              <label><input type="radio" name="spice" value="gentle" checked /> Gentle</label>
+              <label><input type="radio" name="spice" value="medium" /> Medium</label>
+              <label><input type="radio" name="spice" value="fiery" /> Fiery</label>
+            </fieldset>
+            <label>
+              Garnish
+              <select name="garnish">
+                <option>Ghee and curry leaves</option>
+                <option>Lemon and coriander</option>
+                <option>Extra papad</option>
+              </select>
+            </label>
+          </form>
+        </div>
+        <aside class="summary" aria-live="polite" aria-labelledby="summary-title">
+          <p class="eyebrow">Your order</p>
+          <h3 id="summary-title" data-summary-bowl>Rainy Day Rasam Rice</h3>
+          <p data-summary-copy>
+            Gentle spice with ghee and curry leaves. Ready in 12 minutes.
+          </p>
+          <button class="button primary" type="button" data-toast-button>
+            Reserve pickup
+          </button>
+          <p class="toast" role="status" data-toast hidden>
+            Pickup reserved. Your bowl will stay warm.
+          </p>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Built for DEV Frontend Challenge: Comfort Food Edition.</p>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
