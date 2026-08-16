@@ -12,6 +12,7 @@ const resetOrderButton = document.querySelector("[data-reset-order]");
 const toast = document.querySelector("[data-toast]");
 
 let reservationTimer;
+let loaderTimer;
 
 const garnishCopy = {
   "Ghee and curry leaves": "ghee and curry leaves",
@@ -68,19 +69,35 @@ function reservePickup() {
   }, 1100);
 }
 
+function showLoaderIfStillLoading() {
+  if (!loader) {
+    return;
+  }
+
+  loader.hidden = false;
+  loader.classList.remove("is-hidden");
+}
+
 function hideLoader() {
   if (!loader) {
     return;
   }
 
+  window.clearTimeout(loaderTimer);
+  if (loader.hidden) {
+    return;
+  }
+
   window.setTimeout(() => {
     loader.classList.add("is-hidden");
-  }, 650);
+    window.setTimeout(() => {
+      loader.hidden = true;
+    }, 420);
+  }, 220);
 }
 
-if (document.readyState === "complete") {
-  hideLoader();
-} else {
+if (document.readyState !== "complete") {
+  loaderTimer = window.setTimeout(showLoaderIfStillLoading, 350);
   window.addEventListener("load", hideLoader, { once: true });
 }
 
