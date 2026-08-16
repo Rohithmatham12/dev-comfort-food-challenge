@@ -46,7 +46,10 @@ The main artwork is drawn with CSS:
 
 - bowl, rim, rasam surface, rice grains, tomatoes, pepper, and curry leaves
 - banana leaf, papad, pickle cup, spoon, and brass lamp
-- rainy window with moon glow, falling rain, and sliding droplets
+- rainy window with moon glow, skyline silhouettes, glass reflections, falling
+  rain, and sliding droplets
+- table details including a faint kolam pattern, scattered pepper, and curry
+  sprig
 - CSS-only steam, rasam shimmer, rain, droplet, and flame animations
 - depth through radial gradients, inset shadows, layered positioning, and blur
 

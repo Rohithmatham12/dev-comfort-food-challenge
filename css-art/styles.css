@@ -139,6 +139,17 @@ h1 span {
     radial-gradient(circle at 76% 75%, rgba(94, 45, 28, 0.32), transparent 18rem);
 }
 
+.art-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 72%, rgba(255, 225, 151, 0.18), transparent 31%),
+    linear-gradient(120deg, transparent 0 42%, rgba(255, 255, 255, 0.08) 43% 45%, transparent 46% 100%);
+  mix-blend-mode: screen;
+}
+
 .window {
   position: absolute;
   left: 7%;
@@ -154,6 +165,39 @@ h1 span {
   box-shadow:
     inset 0 0 0 4px rgba(255, 235, 185, 0.12),
     0 18px 42px rgba(33, 16, 8, 0.28);
+}
+
+.window::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(115deg, transparent 0 16%, rgba(255, 255, 255, 0.1) 17% 18%, transparent 19% 47%, rgba(255, 255, 255, 0.08) 48% 49%, transparent 50%),
+    radial-gradient(ellipse at 69% 28%, rgba(255, 238, 181, 0.2), transparent 16rem);
+}
+
+.skyline {
+  position: absolute;
+  bottom: 0;
+  width: 7%;
+  background: linear-gradient(180deg, rgba(26, 56, 73, 0.2), rgba(7, 20, 30, 0.72));
+  opacity: 0.64;
+}
+
+.k1 {
+  left: 8%;
+  height: 28%;
+}
+
+.k2 {
+  left: 16%;
+  height: 18%;
+}
+
+.k3 {
+  right: 8%;
+  height: 23%;
 }
 
 .moon {
@@ -174,6 +218,18 @@ h1 span {
   border-radius: 50%;
   background: rgba(24, 54, 74, 0.24);
   transform: translate(0.8rem, -0.3rem);
+}
+
+.moon-reflection {
+  position: absolute;
+  right: 18%;
+  bottom: 12%;
+  width: 7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: rgba(255, 239, 171, 0.28);
+  filter: blur(7px);
+  animation: reflection-pulse 3.8s ease-in-out infinite;
 }
 
 .window-cross {
@@ -216,6 +272,10 @@ h1 span {
 .r8 { left: 83%; top: -39%; animation-delay: -220ms; }
 .r9 { left: 91%; top: -20%; animation-delay: -820ms; }
 .r10 { left: 35%; top: -50%; animation-delay: -270ms; }
+.r11 { left: 14%; top: -48%; animation-delay: -760ms; }
+.r12 { left: 47%; top: -54%; animation-delay: -510ms; }
+.r13 { left: 69%; top: -49%; animation-delay: -940ms; }
+.r14 { left: 96%; top: -44%; animation-delay: -160ms; }
 
 .droplet {
   position: absolute;
@@ -230,6 +290,8 @@ h1 span {
 .d1 { left: 16%; top: 18%; }
 .d2 { left: 58%; top: 12%; animation-delay: -1.8s; }
 .d3 { left: 84%; top: 34%; animation-delay: -2.7s; }
+.d4 { left: 37%; top: 8%; animation-delay: -3.4s; transform: scale(0.72); }
+.d5 { left: 72%; top: 28%; animation-delay: -0.9s; transform: scale(0.82); }
 
 .table {
   position: absolute;
@@ -239,6 +301,23 @@ h1 span {
     linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 6rem),
     linear-gradient(180deg, #7a3c23 0%, var(--wood) 100%);
   box-shadow: inset 0 15px 0 rgba(255, 223, 165, 0.08);
+}
+
+.kolam {
+  position: absolute;
+  left: 50%;
+  bottom: 2%;
+  width: min(26vw, 260px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  opacity: 0.28;
+  transform: translateX(-50%) rotate(45deg) scaleY(0.42);
+  background:
+    radial-gradient(circle, transparent 0 19%, rgba(255, 241, 205, 0.85) 20% 22%, transparent 23%),
+    radial-gradient(circle at 50% 0%, rgba(255, 241, 205, 0.72) 0 6%, transparent 7%),
+    radial-gradient(circle at 100% 50%, rgba(255, 241, 205, 0.72) 0 6%, transparent 7%),
+    radial-gradient(circle at 50% 100%, rgba(255, 241, 205, 0.72) 0 6%, transparent 7%),
+    radial-gradient(circle at 0% 50%, rgba(255, 241, 205, 0.72) 0 6%, transparent 7%);
 }
 
 .banana-leaf {
@@ -328,6 +407,8 @@ h1 span {
 .g2 { left: 49%; top: 14%; transform: rotate(-12deg); }
 .g3 { left: 59%; top: 8%; transform: rotate(28deg); }
 .g4 { left: 39%; top: 20%; transform: rotate(-24deg); }
+.g5 { left: 68%; top: 10%; transform: rotate(42deg) scale(0.82); }
+.g6 { left: 24%; top: 17%; transform: rotate(-10deg) scale(0.78); }
 
 .tomato {
   width: 1.35rem;
@@ -339,6 +420,7 @@ h1 span {
 
 .t1 { left: 35%; top: 13%; }
 .t2 { left: 56%; top: 18%; transform: scale(0.8); }
+.t3 { left: 47%; top: 8%; transform: scale(0.62); }
 
 .pepper {
   width: 0.45rem;
@@ -350,6 +432,8 @@ h1 span {
 .p1 { left: 45%; top: 9%; }
 .p2 { left: 64%; top: 15%; }
 .p3 { left: 51%; top: 24%; }
+.p4 { left: 70%; top: 24%; transform: scale(0.78); }
+.p5 { left: 37%; top: 25%; transform: scale(0.7); }
 
 .leaf {
   width: 1.35rem;
@@ -360,6 +444,24 @@ h1 span {
 
 .l1 { left: 28%; top: 21%; transform: rotate(22deg); }
 .l2 { left: 68%; top: 23%; transform: rotate(-18deg); }
+.l3 { left: 73%; top: 14%; transform: rotate(-38deg) scale(0.75); }
+
+.tempering {
+  position: absolute;
+  left: 31%;
+  top: 6%;
+  z-index: 2;
+  width: 42%;
+  height: 26%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 11% 45%, #111 0 0.16rem, transparent 0.18rem),
+    radial-gradient(circle at 24% 64%, #111 0 0.12rem, transparent 0.14rem),
+    radial-gradient(circle at 82% 36%, #111 0 0.14rem, transparent 0.16rem),
+    radial-gradient(circle at 91% 68%, #111 0 0.11rem, transparent 0.13rem),
+    radial-gradient(circle at 45% 28%, rgba(255, 219, 76, 0.76) 0 0.22rem, transparent 0.24rem);
+  filter: drop-shadow(0 0 3px rgba(255, 213, 79, 0.35));
+}
 
 .bowl-front {
   position: absolute;
@@ -434,6 +536,44 @@ h1 span {
     radial-gradient(circle at 48% 45%, #461b13 0 0.34rem, transparent 0.4rem),
     linear-gradient(180deg, #bb2b19, #7b1b11);
 }
+
+.pepper-scatter {
+  position: absolute;
+  width: 0.52rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #21170f;
+  box-shadow: 0 2px 4px rgba(32, 12, 3, 0.26);
+}
+
+.ps1 { left: 36%; bottom: 16%; }
+.ps2 { left: 69%; bottom: 15%; transform: scale(0.82); }
+.ps3 { right: 30%; bottom: 32%; transform: scale(0.72); }
+
+.curry-sprig {
+  position: absolute;
+  left: 29%;
+  bottom: 28%;
+  width: min(9vw, 86px);
+  height: 1rem;
+  border-radius: 999px;
+  background: #245a2b;
+  transform: rotate(18deg);
+  box-shadow: 0 8px 12px rgba(32, 12, 3, 0.18);
+}
+
+.curry-sprig span {
+  position: absolute;
+  top: -0.42rem;
+  width: 1.2rem;
+  height: 0.58rem;
+  border-radius: 100% 0;
+  background: #4f8f39;
+}
+
+.curry-sprig span:nth-child(1) { left: 13%; transform: rotate(-35deg); }
+.curry-sprig span:nth-child(2) { left: 42%; transform: rotate(28deg); }
+.curry-sprig span:nth-child(3) { right: 6%; transform: rotate(-20deg); }
 
 .spoon {
   position: absolute;
@@ -606,6 +746,18 @@ h1 span {
   50% {
     filter: saturate(1.16) brightness(1.04);
     transform: scale(1.012);
+  }
+}
+
+@keyframes reflection-pulse {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scaleX(0.82);
+  }
+  50% {
+    opacity: 0.46;
+    transform: scaleX(1.05);
   }
 }
 
