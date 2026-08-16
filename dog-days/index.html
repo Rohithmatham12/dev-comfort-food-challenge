@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PawPace | Dog Days Walk Planner</title>
+    <meta
+      name="description"
+      content="A dog walk safety and enrichment planner for hot Dog Days weather."
+    />
+    <meta property="og:title" content="PawPace | Dog Days Walk Planner" />
+    <meta
+      property="og:description"
+      content="Plan safer walks, paw checks, hydration, and indoor enrichment for dogs."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#planner">Skip to planner</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="PawPace home">
+        <span class="paw-logo" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </span>
+        <span>PawPace</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#planner">Planner</a>
+        <a href="#how">How it works</a>
+        <a href="#ai">Google AI</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">DEV Weekend Challenge · Dog Days Edition</p>
+          <h1 id="hero-title">
+            <span>Before the</span>
+            <span>leash, check</span>
+            <span>the pace.</span>
+          </h1>
+          <p>
+            PawPace turns hot-weather guesses into a clear walk plan for dogs:
+            risk level, paw safety, hydration, cooler timing, and indoor backup
+            enrichment.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#planner">Build a walk plan</a>
+            <a class="button ghost" href="#ai">Try Google AI mode</a>
+          </div>
+        </div>
+
+        <div class="dog-card" role="img" aria-labelledby="dog-art-title dog-art-desc">
+          <h2 id="dog-art-title" class="sr-only">Illustration of a dog waiting for a safer walk</h2>
+          <p id="dog-art-desc" class="sr-only">
+            A CSS illustration of a dog near a leash, water bowl, shade, and sun
+            meter.
+          </p>
+          <span class="sun"></span>
+          <span class="shade"></span>
+          <span class="leash"></span>
+          <div class="dog">
+            <span class="tail"></span>
+            <span class="body"></span>
+            <span class="head"></span>
+            <span class="ear"></span>
+            <span class="eye"></span>
+            <span class="nose"></span>
+            <span class="leg front"></span>
+            <span class="leg back"></span>
+          </div>
+          <span class="bowl"><span></span></span>
+          <span class="thermo"><span></span></span>
+        </div>
+      </section>
+
+      <section id="planner" class="planner-section" aria-labelledby="planner-title">
+        <div class="section-heading">
+          <p class="eyebrow">Walk Planner</p>
+          <h2 id="planner-title">Tell PawPace the day, the dog, and the plan.</h2>
+          <p>
+            The score updates instantly. It is not veterinary advice, but it
+            gives a careful starting point for everyday decisions.
+          </p>
+        </div>
+
+        <div class="planner-grid">
+          <form class="planner-form" aria-describedby="planner-help">
+            <p id="planner-help" class="sr-only">
+              Change any field to update the walk safety plan.
+            </p>
+
+            <label>
+              Dog name
+              <input id="dog-name" name="dog-name" value="Milo" autocomplete="off" />
+            </label>
+
+            <div class="field-row">
+              <label>
+                Air temperature
+                <span class="value-label"><span data-temp-label>88</span>°F</span>
+                <input id="temperature" type="range" min="45" max="110" value="88" />
+              </label>
+              <label>
+                Humidity
+                <span class="value-label"><span data-humidity-label>58</span>%</span>
+                <input id="humidity" type="range" min="10" max="100" value="58" />
+              </label>
+            </div>
+
+            <div class="field-row">
+              <label>
+                Pavement feel
+                <select id="pavement">
+                  <option value="cool">Cool / shaded</option>
+                  <option value="warm" selected>Warm</option>
+                  <option value="hot">Hot to touch</option>
+                </select>
+              </label>
+              <label>
+                Walk length
+                <select id="duration">
+                  <option value="10">10 minutes</option>
+                  <option value="20" selected>20 minutes</option>
+                  <option value="35">35 minutes</option>
+                  <option value="50">50 minutes</option>
+                </select>
+              </label>
+            </div>
+
+            <fieldset>
+              <legend>Dog profile</legend>
+              <label>
+                <input type="radio" name="dog-size" value="small" />
+                Small / toy
+              </label>
+              <label>
+                <input type="radio" name="dog-size" value="medium" checked />
+                Medium
+              </label>
+              <label>
+                <input type="radio" name="dog-size" value="large" />
+                Large / giant
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Extra sensitivity</legend>
+              <label>
+                <input id="short-nose" type="checkbox" />
+                Short-nosed breed
+              </label>
+              <label>
+                <input id="senior" type="checkbox" />
+                Senior, puppy, or recovering
+              </label>
+              <label>
+                <input id="dark-coat" type="checkbox" />
+                Thick or dark coat
+              </label>
+            </fieldset>
+          </form>
+
+          <aside class="result-card" aria-live="polite" aria-labelledby="result-title">
+            <div class="result-topline">
+              <p class="eyebrow">Current Plan</p>
+              <span class="risk-pill" data-risk-pill>Moderate</span>
+            </div>
+            <h3 id="result-title" data-result-title>Milo needs a slower, shaded walk.</h3>
+            <p data-result-copy>
+              Keep the route short, bring water, and choose shade when possible.
+            </p>
+
+            <div class="score-wrap">
+              <div
+                class="score-ring"
+                role="meter"
+                aria-label="Walk caution score"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="58"
+                data-score-ring
+              >
+                <span data-score>58</span>
+              </div>
+              <div>
+                <strong data-walk-window>Best window: after sunset</strong>
+                <span data-paw-check>Pavement check: hold your palm down for 7 seconds.</span>
+              </div>
+            </div>
+
+            <ul class="plan-list" data-plan-list></ul>
+
+            <button class="button primary full" type="button" data-copy-plan>
+              Copy walk plan
+            </button>
+            <p class="copy-status" data-copy-status aria-live="polite"></p>
+          </aside>
+        </div>
+      </section>
+
+      <section id="ai" class="ai-section" aria-labelledby="ai-title">
+        <div>
+          <p class="eyebrow">Optional Prize Tech</p>
+          <h2 id="ai-title">Google AI mode for a custom enrichment plan.</h2>
+          <p>
+            PawPace works without an API key. If you add a Google AI Studio API
+            key, it can ask Gemini for a tailored indoor enrichment plan based
+            on the current dog profile and weather risk.
+          </p>
+        </div>
+        <div class="ai-card">
+          <label>
+            Google AI API key
+            <input
+              id="gemini-key"
+              type="password"
+              placeholder="Paste key locally, not stored"
+              autocomplete="off"
+            />
+          </label>
+          <button class="button primary" type="button" data-ai-button>
+            Generate with Google AI
+          </button>
+          <p class="ai-note">
+            The key stays in this browser session and is sent only to Google
+            Generative Language API when you press the button.
+          </p>
+          <div class="ai-output" data-ai-output aria-live="polite">
+            No key? The regular planner still gives a complete rule-based plan.
+          </div>
+        </div>
+      </section>
+
+      <section id="how" class="how-section" aria-labelledby="how-title">
+        <p class="eyebrow">How It Works</p>
+        <h2 id="how-title">Small safety signals, one readable plan.</h2>
+        <div class="how-grid">
+          <article>
+            <span>01</span>
+            <h3>Heat load</h3>
+            <p>Temperature, humidity, coat, age, and face shape raise or lower the caution score.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Paw risk</h3>
+            <p>Pavement and walk length adjust the plan toward shade, shorter loops, or indoor games.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Backup joy</h3>
+            <p>If the walk is risky, PawPace suggests enrichment instead of simply saying no.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
