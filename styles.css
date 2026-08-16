@@ -162,6 +162,160 @@ input {
   white-space: nowrap;
 }
 
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(242, 187, 74, 0.28), transparent 34%),
+    var(--paper);
+  transition: opacity 380ms ease, visibility 380ms ease;
+}
+
+.loader.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-card {
+  width: min(360px, calc(100vw - 36px));
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow);
+  padding: 30px;
+  text-align: center;
+}
+
+.cooker {
+  position: relative;
+  width: 150px;
+  height: 130px;
+  margin: 0 auto 18px;
+}
+
+.cooker-steam {
+  position: absolute;
+  inset: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  height: 70px;
+}
+
+.cooker-steam span {
+  width: 10px;
+  height: 58px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(167, 63, 29, 0), rgba(167, 63, 29, 0.28), rgba(167, 63, 29, 0));
+  filter: blur(4px);
+  animation: steam-rise 1.8s ease-in-out infinite;
+}
+
+.cooker-steam span:nth-child(2) {
+  animation-delay: 280ms;
+}
+
+.cooker-steam span:nth-child(3) {
+  animation-delay: 560ms;
+}
+
+.cooker-pot {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  bottom: 22px;
+  height: 58px;
+  border-radius: 8px 8px 28px 28px;
+  background: linear-gradient(180deg, #ffe0a0, #d7692e);
+  box-shadow: inset 0 -10px 0 rgba(125, 45, 22, 0.18);
+}
+
+.cooker-pot::before,
+.cooker-pot::after {
+  content: "";
+  position: absolute;
+  top: 17px;
+  width: 20px;
+  height: 18px;
+  border: 6px solid #d7692e;
+  border-radius: 999px;
+}
+
+.cooker-pot::before {
+  left: -22px;
+}
+
+.cooker-pot::after {
+  right: -22px;
+}
+
+.bubble {
+  position: absolute;
+  bottom: 18px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 250, 242, 0.82);
+  animation: bubble-pop 1.2s ease-in-out infinite;
+}
+
+.bubble-one {
+  left: 32px;
+}
+
+.bubble-two {
+  left: 58px;
+  animation-delay: 250ms;
+}
+
+.bubble-three {
+  right: 34px;
+  animation-delay: 520ms;
+}
+
+.cooker-flame {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 36px;
+  height: 34px;
+  border-radius: 60% 60% 55% 55%;
+  background: linear-gradient(180deg, #ffd56f, #d94719);
+  transform: translateX(-50%);
+  animation: flame-flicker 620ms ease-in-out infinite alternate;
+}
+
+.loader-title {
+  margin-bottom: 6px;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.loader-copy {
+  margin-bottom: 18px;
+  color: var(--muted);
+}
+
+.loader-bar {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--leaf-soft);
+}
+
+.loader-bar span {
+  display: block;
+  width: 48%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--spice);
+  animation: loader-sweep 1.25s ease-in-out infinite;
+}
+
 .hero {
   position: relative;
   min-height: 100svh;
@@ -200,31 +354,31 @@ input {
 
 .steam {
   position: absolute;
-  right: clamp(70px, 16vw, 260px);
-  bottom: clamp(260px, 42vh, 450px);
+  right: clamp(120px, 22vw, 360px);
+  bottom: clamp(330px, 52vh, 560px);
   display: flex;
-  gap: 18px;
-  opacity: 0.72;
+  gap: 22px;
+  opacity: 0.95;
   pointer-events: none;
 }
 
 .steam span {
-  width: 14px;
-  height: 86px;
+  width: 18px;
+  height: 118px;
   border-radius: 999px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 245, 219, 0.72), rgba(255, 255, 255, 0));
-  filter: blur(8px);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 245, 219, 0.9), rgba(255, 255, 255, 0));
+  filter: blur(9px);
   transform-origin: bottom;
-  animation: steam-rise 3.4s ease-in-out infinite;
+  animation: hero-steam-rise 3.4s ease-in-out infinite;
 }
 
 .steam span:nth-child(2) {
-  height: 112px;
+  height: 148px;
   animation-delay: 650ms;
 }
 
 .steam span:nth-child(3) {
-  height: 78px;
+  height: 104px;
   animation-delay: 1.2s;
 }
 
@@ -582,9 +736,9 @@ fieldset label {
   }
 
   .steam {
-    right: 42px;
-    bottom: 46vh;
-    transform: scale(0.8);
+    right: 82px;
+    bottom: 56vh;
+    transform: scale(0.68);
   }
 }
 
@@ -610,7 +764,7 @@ fieldset label {
   }
 }
 
-@keyframes steam-rise {
+@keyframes hero-steam-rise {
   0% {
     opacity: 0;
     transform: translateY(26px) scaleX(0.8);
@@ -621,6 +775,50 @@ fieldset label {
   100% {
     opacity: 0;
     transform: translateY(-22px) scaleX(1.25);
+  }
+}
+
+@keyframes steam-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scaleX(0.7);
+  }
+  45% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-18px) scaleX(1.15);
+  }
+}
+
+@keyframes bubble-pop {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(8px) scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-8px) scale(1);
+  }
+}
+
+@keyframes flame-flicker {
+  from {
+    transform: translateX(-50%) scaleX(0.88) scaleY(0.92);
+  }
+  to {
+    transform: translateX(-50%) scaleX(1.08) scaleY(1.08);
+  }
+}
+
+@keyframes loader-sweep {
+  0% {
+    transform: translateX(-110%);
+  }
+  100% {
+    transform: translateX(230%);
   }
 }
 

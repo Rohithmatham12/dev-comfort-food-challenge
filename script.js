@@ -1,6 +1,7 @@
 const header = document.querySelector("[data-header]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navLinks = document.querySelector("[data-nav-links]");
+const loader = document.querySelector("[data-loader]");
 const orderForm = document.querySelector("[data-order-form]");
 const summaryBowl = document.querySelector("[data-summary-bowl]");
 const summaryCopy = document.querySelector("[data-summary-copy]");
@@ -29,6 +30,22 @@ function updateOrderSummary() {
 
 function capitalize(value) {
   return `${value.charAt(0).toUpperCase()}${value.slice(1)}`;
+}
+
+function hideLoader() {
+  if (!loader) {
+    return;
+  }
+
+  window.setTimeout(() => {
+    loader.classList.add("is-hidden");
+  }, 650);
+}
+
+if (document.readyState === "complete") {
+  hideLoader();
+} else {
+  window.addEventListener("load", hideLoader, { once: true });
 }
 
 window.addEventListener("scroll", updateHeader, { passive: true });
