@@ -51,4 +51,6 @@ updateOrderSummary();
 
 toastButton.addEventListener("click", () => {
   toast.hidden = false;
+  toastButton.textContent = "Pickup reserved";
+  toastButton.disabled = true;
 });

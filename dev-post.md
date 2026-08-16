@@ -11,6 +11,12 @@ I built **Rasam House**, a polished landing page for an imaginary comfort-food
 spot centered around South Indian rasam rice. I wanted the page to feel like the
 meal itself: warm, clear, unfussy, and quietly comforting.
 
+For me, rasam rice is the food equivalent of someone lowering the volume on a
+hard day. It is simple: rice, pepper, tamarind, tomato, curry leaves, and a
+little ghee. But when it is hot and bright and spooned into a bowl, it feels
+like being brought back to yourself. That is the feeling I tried to turn into a
+landing page.
+
 The page includes:
 
 - a full-viewport food hero
@@ -36,6 +42,10 @@ and let the dish lead the first screen. The interaction is intentionally small:
 users can choose a bowl, spice level, and garnish, and the order summary updates
 without needing a backend.
 
+I also added a gentle steam animation in the hero and a tiny confirmation moment
+after reserving pickup. The motion is intentionally quiet because comfort food
+should not feel like a slot machine.
+
 I focused on frontend fundamentals:
 
 - semantic sections and form labels
@@ -44,6 +54,14 @@ I focused on frontend fundamentals:
 - responsive grid changes
 - no layout overlap on narrow screens
 - lightweight JavaScript
+- reduced-motion support for the animated parts
+
+## Accessibility Notes
+
+I included a skip link, semantic landmarks, a named navigation region, labeled
+form controls, visible focus states, and an `aria-live` order summary so changes
+are announced politely. The mobile menu button updates `aria-expanded`, and the
+page avoids relying on animation for core understanding.
 
 ## Built With
 
@@ -53,4 +71,10 @@ I focused on frontend fundamentals:
 
 ## Screenshots
 
-<!-- Add screenshots after deploying or opening locally. -->
+Desktop:
+
+![Rasam House desktop screenshot](https://rohithmatham12.github.io/dev-comfort-food-challenge/assets/screenshot-desktop.png)
+
+Mobile:
+
+![Rasam House mobile screenshot](https://rohithmatham12.github.io/dev-comfort-food-challenge/assets/screenshot-mobile.png)
