@@ -71,6 +71,16 @@ input {
   transform: translateY(0);
 }
 
+.noscript-note {
+  margin: 0;
+  border-bottom: 1px solid var(--line);
+  background: #fff4e2;
+  color: var(--ink);
+  font-weight: 700;
+  padding: 12px 20px;
+  text-align: center;
+}
+
 .site-header {
   position: fixed;
   inset: 0 0 auto;

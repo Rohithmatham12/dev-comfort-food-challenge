@@ -45,6 +45,7 @@ The page includes:
 - Open Graph and Twitter preview metadata
 - responsive mobile layout
 - WCAG 2.0 AA-focused accessibility checks and reduced-motion support
+- a no-JavaScript fallback note and MIT-licensed source
 
 ## Demo
 
@@ -94,11 +95,17 @@ The page also avoids relying on motion for meaning. Steam, loader, and progress
 animations are decorative or supplemental, and the CSS respects
 `prefers-reduced-motion`.
 
+I also included a no-JavaScript fallback note. The core landing page content,
+menu, and accessibility notes remain available without JavaScript; the bowl
+builder and pickup receipt are progressive enhancements.
+
 ## Built With
 
 - HTML
 - CSS
 - JavaScript
+
+The source is MIT licensed.
 
 ## Screenshots
 

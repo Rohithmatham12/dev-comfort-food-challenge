@@ -26,7 +26,14 @@ Then visit `http://localhost:8080`.
 - Mood-based bowl builder
 - Dynamic comfort receipt with ETA, total, comfort meter, and pickup code
 - Conditional cooking loader and subtle steam motion
+- No-JavaScript fallback note for progressive enhancement
 - Reduced-motion support
+
+## Accessibility
+
+The page is built around WCAG 2.0 AA fundamentals: semantic landmarks,
+keyboard-operable controls, visible focus states, readable contrast,
+reduced-motion support, and screen-reader friendly dynamic state updates.
 
 ## Files
 
@@ -35,3 +42,7 @@ Then visit `http://localhost:8080`.
 - `script.js`
 - `assets/rasam-rice-hero.png`
 - `dev-post.md`
+
+## License
+
+MIT
