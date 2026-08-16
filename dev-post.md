@@ -44,7 +44,7 @@ The page includes:
 - a pickup reservation state with progress, confirmation code, copy note, and reset
 - Open Graph and Twitter preview metadata
 - responsive mobile layout
-- reduced-motion support
+- WCAG 2.0 AA-focused accessibility checks and reduced-motion support
 
 ## Demo
 
@@ -80,10 +80,19 @@ I focused on frontend fundamentals:
 
 ## Accessibility Notes
 
-I included a skip link, semantic landmarks, a named navigation region, labeled
-form controls, visible focus states, and an `aria-live` order summary so changes
-are announced politely. The mobile menu button updates `aria-expanded`, and the
-page avoids relying on animation for core understanding.
+I designed the page around WCAG 2.0 AA fundamentals: perceivable content,
+operable controls, understandable form behavior, and robust semantic HTML. The
+page includes a skip link, semantic landmarks, a named navigation region,
+labeled form controls, visible focus states, and no keyboard traps.
+
+Dynamic order updates are announced with a polite live region. The comfort meter
+uses `role="meter"` with `aria-valuenow` and `aria-valuetext`, the mobile menu
+button updates `aria-expanded`, and the reservation card uses `aria-busy` while
+the pickup state is processing.
+
+The page also avoids relying on motion for meaning. Steam, loader, and progress
+animations are decorative or supplemental, and the CSS respects
+`prefers-reduced-motion`.
 
 ## Built With
 

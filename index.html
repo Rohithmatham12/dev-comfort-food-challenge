@@ -242,18 +242,27 @@
             </label>
           </form>
         </div>
-        <aside class="summary" aria-live="polite" aria-labelledby="summary-title">
+        <aside class="summary" aria-live="polite" aria-labelledby="summary-title" aria-busy="false">
           <p class="eyebrow">Your order</p>
           <h3 id="summary-title" data-summary-bowl>Rainy Day Rasam Rice</h3>
           <p data-summary-copy>
             Gentle spice with ghee and curry leaves. Ready in 12 minutes.
           </p>
-          <div class="comfort-meter" aria-label="Comfort meter">
+          <div class="comfort-meter">
             <div>
               <span>Comfort meter</span>
               <strong data-comfort-label>Slow warm</strong>
             </div>
-            <div class="meter-track" aria-hidden="true">
+            <div
+              class="meter-track"
+              role="meter"
+              aria-label="Comfort meter"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="82"
+              aria-valuetext="Slow warm, 82 percent"
+              data-comfort-meter-shell
+            >
               <span data-comfort-meter></span>
             </div>
           </div>
@@ -291,6 +300,19 @@
             Pickup reserved. Your bowl will stay warm.
           </p>
         </aside>
+      </section>
+
+      <section class="section accessibility" aria-labelledby="accessibility-title">
+        <div>
+          <p class="eyebrow">Accessibility</p>
+          <h2 id="accessibility-title">Built to meet WCAG 2.0 AA fundamentals.</h2>
+        </div>
+        <ul class="accessibility-list">
+          <li>Semantic landmarks, headings, labels, and keyboard-friendly controls.</li>
+          <li>Visible focus states, skip link, and no keyboard traps.</li>
+          <li>Readable contrast, responsive text, and no content hidden by motion.</li>
+          <li>Reduced-motion support plus polite status updates for order changes.</li>
+        </ul>
       </section>
     </main>
 

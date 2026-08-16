@@ -10,6 +10,7 @@ const orderProgress = document.querySelector("[data-order-progress]");
 const reservationSteam = document.querySelector("[data-reservation-steam]");
 const comfortLabel = document.querySelector("[data-comfort-label]");
 const comfortMeter = document.querySelector("[data-comfort-meter]");
+const comfortMeterShell = document.querySelector("[data-comfort-meter-shell]");
 const comfortNote = document.querySelector("[data-comfort-note]");
 const summaryEta = document.querySelector("[data-summary-eta]");
 const summaryTotal = document.querySelector("[data-summary-total]");
@@ -75,6 +76,8 @@ function updateOrderSummary() {
   summaryCopy.textContent = `${comfort.label} bowl: ${spice} spice with ${garnishCopy[garnish]}, ${comfort.note}.`;
   comfortLabel.textContent = comfort.comfort;
   comfortMeter.style.width = `${comfort.meter}%`;
+  comfortMeterShell.setAttribute("aria-valuenow", String(comfort.meter));
+  comfortMeterShell.setAttribute("aria-valuetext", `${comfort.comfort}, ${comfort.meter} percent`);
   comfortNote.textContent = comfort.detail;
   summaryEta.textContent = `${comfort.eta} minutes`;
   summaryTotal.textContent = `$${price}`;
@@ -93,6 +96,7 @@ function resetReservationState() {
   toastButton.hidden = false;
   toastButton.disabled = false;
   toastButton.textContent = "Reserve pickup";
+  toastButton.closest(".summary").setAttribute("aria-busy", "false");
   currentPickupCode = "";
 }
 
@@ -104,6 +108,7 @@ function reservePickup() {
   orderProgress.hidden = false;
   toastButton.disabled = true;
   toastButton.textContent = "Simmering...";
+  toastButton.closest(".summary").setAttribute("aria-busy", "true");
   pickupMeta.textContent = "Tempering your order now";
 
   reservationTimer = window.setTimeout(() => {
@@ -114,6 +119,7 @@ function reservePickup() {
     copyReceiptButton.hidden = false;
     pickupMeta.textContent = `Pickup code: ${currentPickupCode}`;
     toast.textContent = `Your rasam is resting under a lid. Pickup code ${currentPickupCode}.`;
+    toastButton.closest(".summary").setAttribute("aria-busy", "false");
     toast.hidden = false;
   }, 1100);
 }

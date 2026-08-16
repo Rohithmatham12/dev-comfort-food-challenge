@@ -835,6 +835,35 @@ fieldset label:has(input:checked) {
   animation: toast-in 220ms ease-out both;
 }
 
+.accessibility {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: 32px;
+  align-items: start;
+  border-top: 1px solid var(--line);
+}
+
+.accessibility h2 {
+  max-width: 560px;
+}
+
+.accessibility-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.accessibility-list li {
+  border-left: 3px solid var(--leaf);
+  border-radius: 0 8px 8px 0;
+  background: #fff4e2;
+  color: var(--muted);
+  font-weight: 700;
+  padding: 13px 16px;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -881,7 +910,8 @@ fieldset label:has(input:checked) {
 
   .intro,
   .ritual,
-  .order {
+  .order,
+  .accessibility {
     grid-template-columns: 1fr;
   }
 

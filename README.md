@@ -21,6 +21,7 @@ Then visit `http://localhost:8080`.
 - Responsive restaurant-style landing page
 - Real food hero image generated for the project
 - Accessible skip link, semantic sections, labels, and focus states
+- WCAG 2.0 AA-focused accessibility notes and screen-reader friendly state updates
 - Mobile navigation
 - Mood-based bowl builder
 - Dynamic comfort receipt with ETA, total, comfort meter, and pickup code
