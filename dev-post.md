@@ -1,7 +1,7 @@
 ---
 title: Rasam House - Comfort Food Landing Page
 published: false
-description: A warm, responsive landing page for a South Indian rasam rice concept.
+description: A food-memory inspired landing page for South Indian rasam rice, built with responsive HTML, CSS, and JavaScript.
 tags: devchallenge, frontendchallenge, css, javascript
 ---
 
@@ -19,14 +19,23 @@ pepper, cumin, curry leaves, and a little ghee. But when it is hot and bright
 and spooned into a bowl, it feels like being brought back to yourself. That is
 the feeling I tried to turn into a landing page.
 
+Instead of treating comfort food like a normal restaurant conversion page, I
+tried to make the interaction feel emotional. The order panel asks what kind of
+day it was -- rainy, long workday, or homesick -- and the bowl summary changes
+around that mood. The reservation flow also has a small cooking moment before it
+returns a pickup code, so the interface feels like something is being prepared
+rather than instantly stamped out.
+
 The page includes:
 
 - a full-viewport food hero with soft steam animation
-- a short cooking loader with a simmering pot animation
+- a conditional cooking loader for slower page loads
 - accessible navigation and skip link
 - menu cards
 - a short cooking ritual section
-- an interactive "build your bowl" order panel
+- an interactive "build your bowl" order panel with mood-based copy
+- a pickup reservation state with progress, a confirmation code, and reset
+- Open Graph and Twitter preview metadata
 - responsive mobile layout
 - reduced-motion support
 
@@ -39,16 +48,17 @@ https://github.com/Rohithmatham12/dev-comfort-food-challenge
 
 ## Journey
 
-The main design challenge was making the food feel present immediately without
-turning the page into a generic restaurant template. I kept the layout simple
-and let the dish lead the first screen. The interaction is intentionally small:
-users can choose a bowl, spice level, and garnish, and the order summary updates
-without needing a backend.
+The main design challenge was making the food memory feel present immediately
+without turning the page into a generic restaurant template. I kept the layout
+simple and let the dish lead the first screen. The interaction is intentionally
+small: users can choose a bowl, spice level, garnish, and mood, and the order
+summary updates without needing a backend.
 
-I also added a gentle steam animation in the hero, a little "Simmering rasam"
-loader, and a tiny confirmation moment after reserving pickup. The motion is
-intentionally quiet because comfort food should not feel like a slot machine. It
-should feel like something is patiently getting warm for you.
+I also added a gentle steam animation in the hero, a conditional "Simmering
+rasam" loader for slower loads, and a tiny confirmation moment after reserving
+pickup. The motion is intentionally quiet because comfort food should not feel
+like a slot machine. It should feel like something is patiently getting warm for
+you.
 
 I focused on frontend fundamentals:
 

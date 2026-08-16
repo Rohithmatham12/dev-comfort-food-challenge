@@ -7,6 +7,27 @@
       name="description"
       content="Rasam House is a comfort food landing page celebrating warm South Indian rasam rice bowls."
     />
+    <meta property="og:title" content="Rasam House | Comfort Food Bowls" />
+    <meta
+      property="og:description"
+      content="A warm, responsive comfort-food landing page for South Indian rasam rice bowls."
+    />
+    <meta
+      property="og:image"
+      content="https://rohithmatham12.github.io/dev-comfort-food-challenge/assets/screenshot-desktop.png"
+    />
+    <meta property="og:url" content="https://rohithmatham12.github.io/dev-comfort-food-challenge/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Rasam House | Comfort Food Bowls" />
+    <meta
+      name="twitter:description"
+      content="A warm, responsive comfort-food landing page for South Indian rasam rice bowls."
+    />
+    <meta
+      name="twitter:image"
+      content="https://rohithmatham12.github.io/dev-comfort-food-challenge/assets/screenshot-desktop.png"
+    />
     <title>Rasam House | Comfort Food Bowls</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -103,6 +124,9 @@
           This concept is part tiny restaurant, part recipe memory. Every detail
           is tuned for warmth: clear choices, readable contrast, keyboard-friendly
           controls, and a first screen that puts the food where it belongs.
+        </p>
+        <p class="memory-line">
+          Some food fills you. Some food quietly puts you back together.
         </p>
       </section>
 
@@ -202,6 +226,12 @@
               <label><input type="radio" name="spice" value="medium" /> Medium</label>
               <label><input type="radio" name="spice" value="fiery" /> Fiery</label>
             </fieldset>
+            <fieldset class="mood-picker">
+              <legend>What kind of day was it?</legend>
+              <label><input type="radio" name="mood" value="rainy" checked /> Rainy</label>
+              <label><input type="radio" name="mood" value="long" /> Long workday</label>
+              <label><input type="radio" name="mood" value="homesick" /> Homesick</label>
+            </fieldset>
             <label>
               Garnish
               <select name="garnish">
@@ -219,6 +249,10 @@
             Gentle spice with ghee and curry leaves. Ready in 12 minutes.
           </p>
           <p class="pickup-meta" data-pickup-meta>Pickup window: 12 minutes</p>
+          <div class="reservation-steam" data-reservation-steam hidden aria-hidden="true">
+            <span></span>
+            <span></span>
+          </div>
           <div class="order-progress" data-order-progress hidden>
             <span></span>
           </div>
