@@ -13,6 +13,10 @@
       property="og:description"
       content="Plan safer walks, paw checks, hydration, and indoor enrichment for dogs."
     />
+    <meta
+      property="og:image"
+      content="https://rohithmatham12.github.io/dev-comfort-food-challenge/dog-days/assets/pawpace-cover.png"
+    />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="styles.css" />
@@ -31,6 +35,7 @@
         <a href="#planner">Planner</a>
         <a href="#how">How it works</a>
         <a href="#ai">Google AI</a>
+        <a href="#report">Report Card</a>
       </nav>
     </header>
 
@@ -98,6 +103,26 @@
               Dog name
               <input id="dog-name" name="dog-name" value="Milo" autocomplete="off" />
             </label>
+
+            <div class="field-row">
+              <label>
+                Location for real weather
+                <span class="value-label">Uses Open-Meteo, no key needed</span>
+                <input
+                  id="location"
+                  name="location"
+                  value="Austin"
+                  autocomplete="address-level2"
+                />
+              </label>
+              <div class="weather-action">
+                <p>Weather lookup</p>
+                <span class="value-label" data-weather-status>Manual values shown</span>
+                <button class="button ghost" type="button" data-weather-button>
+                  Use live weather
+                </button>
+              </div>
+            </div>
 
             <div class="field-row">
               <label>
@@ -193,6 +218,12 @@
               </div>
             </div>
 
+            <div class="risk-breakdown" aria-label="Risk score breakdown">
+              <span data-heat-bar></span>
+              <span data-paw-bar></span>
+              <span data-hydration-bar></span>
+            </div>
+
             <ul class="plan-list" data-plan-list></ul>
 
             <button class="button primary full" type="button" data-copy-plan>
@@ -236,6 +267,57 @@
         </div>
       </section>
 
+      <section id="report" class="report-section" aria-labelledby="report-title">
+        <div class="section-heading">
+          <p class="eyebrow">Shareable Moment</p>
+          <h2 id="report-title">A walk report card, from the dog.</h2>
+          <p>
+            Most dog apps are cute. PawPace tries to prevent actual vet visits,
+            then turns the safer plan into a little note worth screenshotting.
+          </p>
+        </div>
+
+        <div class="report-grid">
+          <article class="report-card" data-report-card>
+            <p class="report-kicker">PawPace Report Card</p>
+            <h3 data-report-heading>Milo rates this plan 6/10 tail wags.</h3>
+            <p data-report-note>
+              Pavement feels a little spicy, buddy. Let us move this walk later,
+              keep it shady, and trade the long loop for sniff games.
+            </p>
+            <dl>
+              <div>
+                <dt>Risk</dt>
+                <dd data-report-risk>Moderate</dd>
+              </div>
+              <div>
+                <dt>Best time</dt>
+                <dd data-report-window>After sunset</dd>
+              </div>
+              <div>
+                <dt>Dog request</dt>
+                <dd data-report-treat>Puzzle toy, please.</dd>
+              </div>
+            </dl>
+          </article>
+
+          <div class="report-actions">
+            <button class="button primary" type="button" data-report-button>
+              Write dog report with Google AI
+            </button>
+            <button class="button ghost" type="button" data-fallback-report>
+              Use rule-based report
+            </button>
+            <button class="button ghost" type="button" data-download-report>
+              Download report image
+            </button>
+            <p class="ai-note" data-report-status aria-live="polite">
+              Add a Google AI key above for a custom first-person dog note.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section id="how" class="how-section" aria-labelledby="how-title">
         <p class="eyebrow">How It Works</p>
         <h2 id="how-title">Small safety signals, one readable plan.</h2>
@@ -254,6 +336,11 @@
             <span>03</span>
             <h3>Backup joy</h3>
             <p>If the walk is risky, PawPace suggests enrichment instead of simply saying no.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Real numbers</h3>
+            <p>Open-Meteo can ground the planner with local temperature, humidity, and UV.</p>
           </article>
         </div>
       </section>
