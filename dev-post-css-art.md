@@ -48,10 +48,9 @@ The main artwork is drawn with CSS:
 - banana leaf, papad, pickle cup, spoon, and brass lamp
 - rainy window with moon glow, skyline silhouettes, glass reflections, falling
   rain, and sliding droplets
-- table details including a faint kolam pattern, scattered pepper, and curry
-  sprig
-- CSS-only steam, rasam shimmer, rain, droplet, lamp glow, window puddle, and
-  mustard-seed pop animations
+- table details including a faint kolam pattern and banana leaf veins
+- CSS-only steam, rasam shimmer, rain, droplet, lamp glow, and window puddle
+  animations
 - depth through radial gradients, inset shadows, layered positioning, and blur
 
 I avoided SVG, canvas, and bitmap artwork for the illustration itself. The
