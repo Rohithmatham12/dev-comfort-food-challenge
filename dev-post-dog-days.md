@@ -101,7 +101,7 @@ Mobile:
 ## Technical Details
 
 - Vanilla HTML, CSS, and JavaScript
-- CSS dog illustration, sun meter, leash, shade, and water bowl
+- polished dog hero image with leash, shade, and water bowl
 - Open-Meteo geocoding and current weather lookup
 - rule-based scoring model for walk caution, paw risk, and hydration need
 - color-coded visual risk meter and risk breakdown bars
