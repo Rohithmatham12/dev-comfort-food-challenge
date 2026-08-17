@@ -38,7 +38,7 @@ Source code: [GitHub repository](https://github.com/Rohithmatham12/dev-comfort-f
 
 Quick flow:
 
-![PawPace demo showing hero, risk planner, and report card](https://rohithmatham12.github.io/dev-comfort-food-challenge/dog-days/assets/pawpace-demo.gif)
+![PawPace demo showing the desktop and mobile walk planner landing page](https://rohithmatham12.github.io/dev-comfort-food-challenge/dog-days/assets/pawpace-demo.gif)
 
 ## Why I Built It
 
@@ -85,14 +85,6 @@ without taking away from the safety utility.
 Desktop:
 
 ![PawPace desktop screenshot](https://rohithmatham12.github.io/dev-comfort-food-challenge/dog-days/assets/pawpace-cover.png)
-
-Planner:
-
-![PawPace planner screenshot](https://rohithmatham12.github.io/dev-comfort-food-challenge/dog-days/assets/pawpace-planner.png)
-
-Report card:
-
-![PawPace report card screenshot](https://rohithmatham12.github.io/dev-comfort-food-challenge/dog-days/assets/pawpace-report-card.png)
 
 Mobile:
 
