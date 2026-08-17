@@ -322,10 +322,24 @@ select:focus-visible,
   bottom: 14%;
   width: min(48vw, 360px);
   height: 260px;
+  filter: drop-shadow(0 18px 18px rgba(25, 32, 29, 0.15));
+  animation: dog-breathe 3.2s ease-in-out infinite;
 }
 
 .dog span {
   position: absolute;
+}
+
+.dog::after {
+  content: "";
+  position: absolute;
+  left: 23%;
+  right: 7%;
+  bottom: 3%;
+  height: 1rem;
+  border-radius: 50%;
+  background: rgba(25, 32, 29, 0.14);
+  filter: blur(8px);
 }
 
 .body {
@@ -336,6 +350,8 @@ select:focus-visible,
   border-radius: 48% 44% 42% 48%;
   background: linear-gradient(145deg, #f4b15a, #b96331);
   box-shadow: inset -22px -18px 0 rgba(116, 56, 27, 0.18);
+  transform-origin: center bottom;
+  animation: body-squish 3.2s ease-in-out infinite;
 }
 
 .head {
@@ -343,8 +359,37 @@ select:focus-visible,
   bottom: 39%;
   width: 37%;
   aspect-ratio: 1;
-  border-radius: 48% 42% 50% 44%;
+  border-radius: 52% 44% 54% 46%;
   background: linear-gradient(145deg, #ffcc7d, #bc6c34);
+  box-shadow:
+    inset -0.85rem -0.7rem 0 rgba(119, 55, 27, 0.12),
+    inset 0.6rem 0.5rem 0 rgba(255, 236, 181, 0.23);
+  animation: head-tilt 3.8s ease-in-out infinite;
+}
+
+.head::before {
+  content: "";
+  position: absolute;
+  left: 13%;
+  bottom: 22%;
+  width: 1.25rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(255, 126, 102, 0.42);
+  box-shadow: 3.25rem -0.15rem 0 rgba(255, 126, 102, 0.32);
+}
+
+.head::after {
+  content: "";
+  position: absolute;
+  left: 20%;
+  bottom: 12%;
+  width: 0.82rem;
+  height: 1.05rem;
+  border-radius: 0 0 999px 999px;
+  background: #f77776;
+  transform-origin: top center;
+  animation: tongue-peek 2.7s ease-in-out infinite;
 }
 
 .ear {
@@ -355,6 +400,8 @@ select:focus-visible,
   border-radius: 80% 20% 70% 20%;
   background: #7b3b24;
   transform: rotate(-22deg);
+  transform-origin: top center;
+  animation: ear-flop 3.8s ease-in-out infinite;
 }
 
 .eye {
@@ -364,6 +411,9 @@ select:focus-visible,
   aspect-ratio: 1;
   border-radius: 50%;
   background: var(--ink);
+  box-shadow: 0.15rem -0.12rem 0 0.08rem rgba(255, 255, 255, 0.8);
+  transform-origin: center;
+  animation: blink 5s ease-in-out infinite;
 }
 
 .nose {
@@ -373,6 +423,18 @@ select:focus-visible,
   aspect-ratio: 1.25;
   border-radius: 50%;
   background: var(--ink);
+  box-shadow: 0.18rem -0.08rem 0 0.08rem rgba(255, 255, 255, 0.24);
+}
+
+.nose::after {
+  content: "";
+  position: absolute;
+  left: 0.68rem;
+  top: 0.72rem;
+  width: 1.35rem;
+  height: 0.62rem;
+  border-bottom: 0.16rem solid rgba(25, 32, 29, 0.64);
+  border-radius: 0 0 999px 999px;
 }
 
 .tail {
@@ -384,7 +446,7 @@ select:focus-visible,
   border-top: 1.2rem solid #b96331;
   transform: rotate(36deg);
   transform-origin: left center;
-  animation: tail-wag 1.2s ease-in-out infinite;
+  animation: tail-wag 0.88s ease-in-out infinite;
 }
 
 .leg {
@@ -393,6 +455,7 @@ select:focus-visible,
   height: 24%;
   border-radius: 999px;
   background: #8a4729;
+  box-shadow: inset -0.32rem -0.25rem 0 rgba(25, 32, 29, 0.12);
 }
 
 .leg.front { left: 35%; }
@@ -819,10 +882,72 @@ input[type="radio"] {
 @keyframes tail-wag {
   0%,
   100% {
-    transform: rotate(30deg);
+    transform: rotate(24deg);
   }
   50% {
-    transform: rotate(48deg);
+    transform: rotate(56deg);
+  }
+}
+
+@keyframes dog-breathe {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.28rem);
+  }
+}
+
+@keyframes body-squish {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.018, 0.988);
+  }
+}
+
+@keyframes head-tilt {
+  0%,
+  100% {
+    transform: rotate(-1deg);
+  }
+  50% {
+    transform: rotate(3deg) translateY(-0.12rem);
+  }
+}
+
+@keyframes ear-flop {
+  0%,
+  100% {
+    transform: rotate(-24deg);
+  }
+  50% {
+    transform: rotate(-14deg) translateY(0.12rem);
+  }
+}
+
+@keyframes blink {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.12);
+  }
+}
+
+@keyframes tongue-peek {
+  0%,
+  70%,
+  100% {
+    transform: scaleY(0.35);
+  }
+  82% {
+    transform: scaleY(1);
   }
 }
 
