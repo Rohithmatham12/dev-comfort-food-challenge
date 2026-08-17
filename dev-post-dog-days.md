@@ -101,7 +101,7 @@ Mobile:
 ## Technical Details
 
 - Vanilla HTML, CSS, and JavaScript
-- animated CSS dog mascot with leash, shade, thermometer, and water bowl
+- cute illustrated dog mascot with leash, shade, thermometer, and water bowl
 - Open-Meteo geocoding and current weather lookup
 - rule-based scoring model for walk caution, paw risk, and hydration need
 - color-coded visual risk meter and risk breakdown bars

@@ -14,7 +14,7 @@ and dog sensitivity into a readable walk plan.
 - Indoor enrichment backup plan for high-risk weather.
 - Optional Google AI mode using a local, user-provided Google AI Studio key.
 - Shareable dog-perspective walk report card with image download.
-- Animated CSS dog mascot, responsive layout, keyboard focus states, and
+- Cute illustrated dog mascot, responsive layout, keyboard focus states, and
   reduced-motion support.
 
 ## Live Demo
